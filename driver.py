@@ -1,8 +1,8 @@
-import docker
 import webbrowser
+import os
 
 
-client = docker.from_env()
+
 def main():
 
     print("Welcome to Big Data Processing Application\nPlease type the number that corresponds to which application you would like to run:\n1. Apache Hadoop\n2. Apache Spark\n3. Jupyter Notebook\n4. SonarQube and SonarScanner")
@@ -14,7 +14,7 @@ def main():
     elif(val == 3):
         print("Jupyter Notebook")
         webbrowser.open('http://localhost:8888/?token=7284adc13ac9eca5c7f8fa6ac3f09cf7a2be7d7484613609')
-        client.containers.run("jupyter/base-notebook", ports={8888:8888}, detach=True)
+        os.system("docker run -p 8888:8888 jupyter/base-notebook")
     elif(val == 4):
         print("Sonar Scanner")
     else:
