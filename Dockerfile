@@ -1,3 +1,5 @@
+FROM docker:dind
+
 FROM python
 RUN pip install docker
 WORKDIR /app
