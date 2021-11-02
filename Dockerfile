@@ -1,4 +1,5 @@
 FROM python
+RUN pip install kubernetes
 WORKDIR /app
 COPY . /app
 EXPOSE 5000
